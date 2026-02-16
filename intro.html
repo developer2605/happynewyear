@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="intro.css">
-    <title>Happy New Year 2023</title>
+    <title>Happy New Year 2026</title>
 </head>
 <body>
     <div class="box-slider">
@@ -105,7 +105,7 @@
                 <img src="image/cat.png" alt="">
             </div>
             <div class="box-number">
-                <div class="number2023">
+                <div class="number2026">
                     <div class="number">
                         <span>2</span>
                     </div>
@@ -116,7 +116,7 @@
                         <span>2</span>
                     </div>
                     <div class="number">
-                        <span>3</span>
+                        <span>6</span>
                     </div>
                 </div>
             </div>
@@ -194,7 +194,7 @@
                             <div class="text-content">
                                 <h2>Happy New</h2>
                                 <h1>Year</h1>
-                                <span>2023</span>
+                                <span>2026</span>
                             </div>
                         </div>
                     </div>
@@ -210,15 +210,33 @@
                 <div class="right">
                     <div class="content">
                         <div class="title">
-                            <h1 id="name-cua-em">&#129505Gửi em !</h1>
+                            <h1 id="name-cua-em">&#129505Gửi Phương !</h1>
                         </div>
                         <p id="message-content">
-                            Chúc em luôn vui vẻ, hạnh phúc, thành công trong công việc và cuộc sống.
+                            Năm mới, chỉ mong mình mãi bên nhau, cùng nhau đi qua mọi mùa xuân.
                         </p>
                         <div class="fixedContent">
-                            <h3>Người gửi: Bé Công</h3>
+                            <h3>Người gửi: Chàng trai ngày ấy</h3>
                         </div>
+                        <div class="random-section" style="margin-top: 20px; text-align: center;">
+                            <h3 style="font-family: 'Dancing Script', cursive;">Số may mắn của em:</h3>
+                            <div id="random-number" style="font-size: 40px; font-weight: bold; color: #c72544; margin: 10px 0;">--</div>
+                            <button id="btn-spin" onclick="generateRandom()" style="padding: 8px 20px; background-color: #c72544; color: white; border: none; border-radius: 5px; cursor: pointer; font-family: 'Roboto', sans-serif;">Quay số May Mắn</button>
+                        </div>
+                        <script>
+                            // Kiểm tra khi vừa tải trang hoặc khi mở thiệp
+                            window.onload = function() {
+                                if (localStorage.getItem("hasSpun")) {
+                                    var btn = document.getElementById("btn-spin");
+                                    btn.disabled = true;
+                                    btn.style.opacity = "0.5";
+                                    btn.style.cursor = "not-allowed";
+                                    btn.innerText = "Đã nhận số";
+                                }
+                            }
+                        </script>
                     </div>
+                    
                 </div>
             </div>
             <i class="fa-solid fa-xmark"></i>

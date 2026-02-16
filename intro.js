@@ -52,3 +52,34 @@ buttonSong.onclick= function(){
         mySong.play()
     }
 }
+
+
+function generateRandom() {
+    var display = document.getElementById("random-number");
+    
+    if (localStorage.getItem("hasSpun")) {
+        alert("Bạn đã quay số rồi! Mỗi lần mở link chỉ được quay 1 lần duy nhất.");
+        return;
+    }
+
+    var count = 0;
+    var btn = event.target;
+    btn.disabled = true;
+    btn.style.opacity = "0.5";
+    btn.style.cursor = "not-allowed";
+
+    var interval = setInterval(function() {
+        // Hiệu ứng chạy số ngẫu nhiên trong khoảng 100 - 500
+        display.innerText = Math.floor(Math.random() * (500 - 100 + 1)) + 100;
+        count++;
+        
+        if (count > 20) {
+            clearInterval(interval);
+            // Kết quả cuối cùng trong khoảng 100 - 500
+            var finalNumber = Math.floor(Math.random() * (500 - 100 + 1)) + 100;
+            display.innerText = finalNumber;
+            
+            localStorage.setItem("hasSpun", "true");
+        }
+    }, 50);
+}
