@@ -57,6 +57,7 @@ buttonSong.onclick= function(){
 function generateRandom() {
     var display = document.getElementById("random-number");
     
+    // Kiểm tra trạng thái đã quay từ localStorage
     if (localStorage.getItem("hasSpun")) {
         alert("Bạn đã quay số rồi! Mỗi lần mở link chỉ được quay 1 lần duy nhất.");
         return;
@@ -64,21 +65,26 @@ function generateRandom() {
 
     var count = 0;
     var btn = event.target;
+    
+    // Vô hiệu hóa nút bấm
     btn.disabled = true;
     btn.style.opacity = "0.5";
     btn.style.cursor = "not-allowed";
 
     var interval = setInterval(function() {
-        // Hiệu ứng chạy số ngẫu nhiên trong khoảng 100 - 500
-        display.innerText = Math.floor(Math.random() * (500 - 100 + 1)) + 100;
-        count++;
+        // Hiệu ứng chạy số ngẫu nhiên trực tiếp trong khoảng 100.000 - 500.000
+        var effectNumber = Math.floor(Math.random() * (500000 - 100000 + 1)) + 100000;
+        display.innerText = effectNumber.toLocaleString('vi-VN');
         
+        count++;
         if (count > 20) {
             clearInterval(interval);
-            // Kết quả cuối cùng trong khoảng 100 - 500
-            var finalNumber = Math.floor(Math.random() * (500 - 100 + 1)) + 100;
-            display.innerText = finalNumber;
             
+            // Kết quả cuối cùng chốt trong khoảng 100.000 - 500.000
+            var finalNumber = Math.floor(Math.random() * (500000 - 100000 + 1)) + 100000;
+            display.innerText = finalNumber.toLocaleString('vi-VN');
+            
+            // Lưu trạng thái để không cho quay lần thứ 2
             localStorage.setItem("hasSpun", "true");
         }
     }, 50);
