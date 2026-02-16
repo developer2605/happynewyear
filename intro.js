@@ -73,7 +73,7 @@ function generateRandom() {
 
     var interval = setInterval(function() {
         // Hiệu ứng chạy số ngẫu nhiên trực tiếp trong khoảng 100.000 - 500.000
-        var effectNumber = Math.floor(Math.random() * (500000 - 100000 + 1)) + 100000;
+        var effectNumber = Math.floor(Math.random() * (1000000 - 100000 + 1)) + 100000;
         display.innerText = effectNumber.toLocaleString('vi-VN');
         
         count++;
@@ -81,7 +81,7 @@ function generateRandom() {
             clearInterval(interval);
             
             // Kết quả cuối cùng chốt trong khoảng 100.000 - 500.000
-            var finalNumber = Math.floor(Math.random() * (500000 - 100000 + 1)) + 100000;
+            var finalNumber = Math.floor(Math.random() * (600000 - 100000 + 1)) + 100000;
             display.innerText = finalNumber.toLocaleString('vi-VN');
             
             // Lưu trạng thái để không cho quay lần thứ 2
